@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Mali 100 Méga</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Pour une augmentation des débits Internet au Mali">
+		<link rel="canonical" href="http://100mega.ml/">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://bamako.jokkolabs.net/stylesheets/fontello/css/fontello.css">
+
+		<link href='http://fonts.googleapis.com/css?family=Economica:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			body { max-width: 800px;}
+			body h1, body h2, body h3 { font-family: 'Economica', sans-serif;  color: black;}
+			address { margin-bottom: 1em; }
+			ul { padding: 0; list-style-position: inside; list-style-type: square; }
+			a, a:visited, a:link, a:hover, a:focus, a:active { color: #009349 !important; }
+			.english h1, .english h2, .english h3 { text-align: right; }
+			.french h1, .french h2, .french h3 { text-align: left; }
+			/* HEADER */
+			header { color: #828282; border-bottom: 1px solid #e8e8e8; padding: .1em 0 .1em 0;}
+			header h2 { font-size: 2em; font-weight: 300; letter-spacing: -0.5px; color: black; }
+			section { border-bottom: 1px solid #333333; }
+			/*footer .projects { position: static; bottom: 10px; right: 1.1em; }*/
+			footer .project img { height: 48px; }
+			footer .project img:hover { box-sizing: border-box; /*border: 1px solid #333333;*/ }
+			/* FOOTER */
+			footer { color: #828282; border-top: 1px solid #e8e8e8; }
+			footer h2 { font-weight: 300; letter-spacing: -0.5px; margin-bottom: .8em; }
+			footer ul { list-style: none; list-style-position: outside; padding: 0; }
+			footer img { padding-top: .3em; }
+			.logo { margin-top: .5em; text-align: right; }
+			.logo img { width: 200px; }
+			/* ELEMENTS */
+			.footnotes { font-size: .8em; }
+			td.bad { color: red; }
+			td.strong { font-weight: bold; }
+			.table th, .table td { text-align: center; }
+			.table th:first-child { text-align: left; }
+
+			body .menu { background-color: gold; padding: .3em; position: fixed; width: 100%; z-index: 1000; max-width: 800px; }
+			.menu a, .menu a:visited, .menu a:link, .menu a:hover, .menu a:focus, .menu a:active { color: white !important; }
+			header { margin-top: 2.5em; }
+			.about { float: right; }
+
+			img { max-width: 100%; }
+		</style>
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	</head>
+    <body>
+    	<div class="menu">ÉTAPES : 
+			<a href="/pub-2mega" class="btn btn-success" title="Fause Pub 2Méga">1</a>
+			<a href="" class="btn btn-success" disabled="disabled">2</a>
+			<a href="" class="btn btn-success" disabled="disabled">3</a>
+			<a href="" class="btn btn-success" disabled="disabled">4</a>
+			<a href="" class="btn btn-success" disabled="disabled">5</a>
+			<a href="" class="btn btn-success" disabled="disabled">6</a>
+			<a href="" class="btn btn-success" disabled="disabled">7</a>
+			{% if page.slug != 'home' %}<a href="/" class="btn btn-danger about">À propos</a>{% endif %}
+    	</div>
+	    {{ content }}
+	</body>
+</html>

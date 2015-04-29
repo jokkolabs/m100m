@@ -1,0 +1,12 @@
+# Site settings
+title: #Mali100Méga
+email: rgaudin@jokkolabs.net
+description: "Pour une augmentation des débits Internet au Mali"
+baseurl: ""
+url: "http://100mega.ml"
+twitter_username: JokkolML
+github_username:  jokkolabs
+
+# Build settings
+markdown: kramdown
+permalink: pretty
