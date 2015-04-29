@@ -138,6 +138,7 @@
 		    			<tr><th>FRANCE</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td data-value="13119">13 119F</td></tr>
 		    		</tbody>
 	    		</table>
+	    		<div id="table_graph"></div>
 
 	    		<h3>Il y a d'autres problèmes au Mali. Internet n'est pas prioritaire.</h3>
 	    		<p><strong>Faux</strong> ! Sans entrer dans le débat de la priorisation du développement, Internet est reconnu par tous les organismes internationaux comme un facteur de développement humain et économique et est même considéré dans certains pays comme un service social de base.</p>
@@ -208,6 +209,110 @@
     	$('#table_eur').on('click', function (e) { change_table_currency('€'); });
     	$('#table_usd').on('click', function (e) { change_table_currency('$'); });
     	$('#table_xof').on('click', function (e) { change_table_currency('F'); });
+    </script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript">
+    	var k384 = 384;
+    	var k512 = 512;
+    	var m1 = 1024;
+    	var m2 = 2048;
+    	var m4 = 4096;
+    	var m8 = 8192;
+    	var m10 = 10240;
+    	var m20 = 20480;
+		$(function () {
+		    $('#table_graph').highcharts({
+		        chart: {
+		            type: 'bar'
+		        },
+		        title: {
+		            text: "Choisissez votre budget pour connaître le débit disponible"
+		        },
+		        xAxis: {
+		            categories: ['MALI', 'SÉNEGAL', "CÔTE D'IVOIRE",
+		            			 'MAURITANIE', 'ALGÉRIE', 'NIGER', 'GUINÉE',
+		            			 'BURKINA FASO', 'GHANA', 'MAROC', 'TUNISIE',
+		            			 'FRANCE'],
+		            title: {
+		                text: null
+		            }
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: 'Débit',
+		                align: 'high'
+		            },
+		            labels: {
+		                overflow: 'justify'
+		            }
+		        },
+		        tooltip: {
+		            // valueSuffix: ' Kbps',
+		            formatter: function (v) { return (this.y / 1024) + "M : " + this.series.name; }
+		        },
+		        plotOptions: {
+		            bar: {
+		                dataLabels: {
+		                    enabled: true,
+		                    formatter: function (v) { return (this.y / 1024) + "M"; }
+		                }
+		            }
+		        },
+		        legend: {
+		            layout: 'vertical',
+		            align: 'right',
+		            verticalAlign: 'top',
+		            x: -40,
+		            y: 100,
+		            floating: true,
+		            borderWidth: 1,
+		            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+		            shadow: true
+		        },
+		        credits: { enabled: false },
+		        series: [{
+		            name: '~ 5 000F (7,5€ – $10)',
+		            data: [null, null, null, m4, null, null, null, null, null, null, m4, null]
+		        }, {
+		            name: '~ 10 000F (15€ – $20)',
+		            data: [null, null, null, null, m1, null, null, null, null, m8, m8, null]
+		        }, {
+		            name: '10 000-15 000F (22€ – $30)',
+		            data: [null, null, null, k512, m2, null, null, null, null, null, m20, m20],
+		            visible: false,
+		        },
+		        {
+		            name: '~ 20 000F (30€ – $40)',
+		            data: [null, null, null, m1, m4, null, null, null, null, null, null, null],
+		            visible: false,
+		        },
+		        {
+		            name: '~ 30 000F (45€ – $60)',
+		            data: [null, m2, m1, null, m8, null, null, null, null, m20, null, null],
+		            visible: false,
+		        },
+		        {
+		            name: '35 000-40 000F (60€ – $80)',
+		            data: [k384, m10, null, m2, null, null, null, null, m2, null, null, null],
+		        },
+		        {
+		            name: '40 000-50 000F (75€ – $100)',
+		            data: [null, null, m8, null, null, null, null, k512, m4, null, null, null],
+		            visible: false,
+		        },
+		        {
+		            name: '50 000-70 000F (105€ – $140)',
+		            data: [null, null, null, m4, null, null, null, null, m8, null, null, null],
+		            visible: false,
+		        },
+		        {
+		            name: '70 000-90 000F (135€ – $180)',
+		            data: [null, null, m10, null, null, k384, null, m1, null, null, null, null],
+		            visible: false,
+		        }]
+		    });
+		});
     </script>
 	</body>
 </html>
