@@ -35,7 +35,8 @@
 			.logo img { width: 200px; }
 			/* ELEMENTS */
 			.footnotes { font-size: .8em; }
-			.bad { color: red; }
+			td.bad { color: red; }
+			td.strong { font-weight: bold; }
 			.table th, .table td { text-align: center; }
 			.table th:first-child { text-align: left; }
 		</style>
@@ -95,6 +96,10 @@
 	    		<h3>Les connexions mobiles (data, Flybox et Malitel) fonctionnent et sont très rapide. Pourquoi ne pas les utiliser ?</h3>
 	    		<p>Oui, les connexions mobiles ont fait beaucoup de progrès ces dernières années et notamment en termes de débit mais <strong>elles sont peu stables</strong> et surtout, <strong>elles sont facturées à la consommation</strong>. Ce dernier point est incompatible avec nos activités tant en terme de débit (comment travailler efficacement s'il faut surveiller la consommation ?) qu'en terme comptable (impossible de prévoir le montant de la facture).</p>
 
+	    		<h3>Pourquoi est-ce que vous vous focalisez sur Orange et pas Malitel ?</h3>
+	    		<p>Comme dit le proverbe, «<em>Le serpent a beau courir, il ne va pas plus vite que sa tête</em>».</p>
+	    		<p>Malitel n'arrive pas a fournir une connexion ADSL de qualité à ses clients actuels. De plus, son service commercial est excecrable. Sans une amélioration de ces deux paramètres, il n'est pas envisageable pour nous autres professionnels d'utiliser leurs services. La situation étant la même depuis des années, nous préférrons tabler sur Orange Mali dont l'issue dépend essentiellement d'une décision commerciale.</p>
+
 	    		<h3>Il existe des connexions 1Mbps, 2Mbps voir plus déjà. Pourquoi n'en parlez-vous pas ?</h3>
 	    		<p>Il existe effectivement un marché <em>Business</em> proposant des débits supérieur voir même des liaisons spécialisés.</p>
 	    		<p>Ces connexions sont hors de portée des entrepreneurs, <acronym title="Toutes Petites Entreprises">TPE</acronym> et <acronym title="Petites et Moyennes Entreprises">PME</acronym>. Elles s'adressent essentiellement aux services de l'État, à certaines ONG et grandes entreprises.</p>
@@ -103,7 +108,7 @@
 	    		<h3>Quels sont les limites à l'augmentation des débits ?</h3>
 	    		<p>En matière de connectivité Internet, il existe deux principales limites :</p>
 	    		<ul>
-	    			<li><strong>La capacité des équipements</strong> : Orange-Mali utilise la technologie WiMAX (BLR) avec des équipements Alvarion essentiellement ce qui nous indique que la limite en terme d'équipements installés chez les clients et le fournisseur se situe dans les 70Mbps. Il reste donc une marge de progression de 186% !<br />
+	    			<li><strong>La capacité des équipements</strong> : Orange-Mali utilise la technologie WiMAX (BLR) avec des équipements Alvarion essentiellement ce qui nous indique que la limite en terme d'équipements installés chez les clients et le fournisseur se situe dans les 70Mbps. Il reste donc une marge de progression confortable (multiplier le débit par 186 !)<br />
 	    			Pour Malitel qui utilise la technologie ADSL, la limite est plus basse, aux alentours de 8Mbps pour les équipements déjà déployés et jusqu'à 28Mbps en changeant certains équipements.</li>
 	    			<li><strong>La bande passante de transit</strong> : le Mali ne produisant pas<sup>*</sup> de contenu, toute la bande passante pour l'Internet doit être achetée auprès de fournisseurs (ou plutôt de revendeurs dans le cas du Mali, le pays étant enclavé). Orange-Mali achête par exemple sa bande passante auprès de Orange Sénégal et Orange Cote d'Ivoire.<br />
 	    			C'est cette bande passante qui devrait constituer la majeur partie du coût de la connexion pour l'utilisateur final.<br />
@@ -112,24 +117,25 @@
 
 	    		<h3>De toute façon c'est partout pareil en Afrique non ?</h3>
 	    		<p><strong>Faux</strong> ! À part la Guinée qui plafonne à 256Kbps et le Niger qui, comme nous plafonne à 384Kbps (mais à 83 000F/mois), les autres pays de la zone sont beaucoup mieux lottis.</p>
-	    		<table class="table table-striped table-bordered table-hover">
+	    		<table id="price_comparison" class="table table-striped table-bordered table-hover">
 	    			<thead>
-	    				<caption>Tableau simplifié des débits disponibles et les tarifs correspondants dans quelques pays</caption>
+	    				<caption>Tableau simplifié des débits disponibles et les tarifs correspondants dans quelques pays<br />
+	    				Voir dans une autre devise : <button class="btn btn-info" id="table_eur">EUROS</button> <button class="btn btn-info" id="table_usd">USD</button> <button class="btn btn-info" id="table_xof">Francs CFA </button></caption>
 	    				<tr><td>débit / tarif mensuel</td><th>384k</th><th>512k</th><th>1M</th><th>2M</th><th>4M</th><th>8M</th><th>10M</th><th>20M</th></tr>
 	    			</thead>
 	    			<tbody>
-		    			<tr><th>MALI</th><td><strong>36 000F</strong></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		    			<tr><th>SÉNEGAL</th><td></td><td></td><td></td><td>29 900F</td><td></td><td></td><td>39 900F</td><td></td></tr>
-		    			<tr><th>CÔTE D'IVOIRE</th><td></td><td></td><td>31 000F</td><td></td><td></td><td>46 400F</td><td>87 600F</td><td></td></tr>
-		    			<tr><th>MAURITANIE</th><td>6 950F</td><td>12 742F</td><td>19 691F</td><td>34 749F</td><td>57 916F</td><td></td><td></td><td></td></tr>
-		    			<tr><th>ALGÉRIE</th><td></td><td></td><td>9 980F</td><td>13 100F</td><td>19 962F</td><td>31 190F</td><td></td><td></td></tr>
-		    			<tr><th>NIGER</th><td class="bad">83 000F</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+		    			<tr><th>MALI</th><td class="strong" data-value="36000">36 000F</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+		    			<tr><th>SÉNEGAL</th><td></td><td></td><td></td><td data-value="29900">29 900F</td><td></td><td></td><td data-value="39900">39 900F</td><td></td></tr>
+		    			<tr><th>CÔTE D'IVOIRE</th><td></td><td></td><td data-value="31000">31 000F</td><td></td><td></td><td data-value="46400">46 400F</td><td data-value="87600">87 600F</td><td></td></tr>
+		    			<tr><th>MAURITANIE</th><td data-value="6950">6 950F</td><td data-value="12742">12 742F</td><td data-value="19691">19 691F</td><td data-value="34749">34 749F</td><td data-value="57916">57 916F</td><td></td><td></td><td></td></tr>
+		    			<tr><th>ALGÉRIE</th><td></td><td></td><td data-value="9980">9 980F</td><td data-value="13100">13 100F</td><td data-value="19962">19 962F</td><td data-value="31190">31 190F</td><td></td><td></td></tr>
+		    			<tr><th>NIGER</th><td class="bad" data-value="83000">83 000F</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 		    			<tr><th>GUINÉE</th><td class="bad">-</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-		    			<tr><th>BURKINA FASO</th><td></td><td>41 900F</td><td>80 400F</td><td></td><td></td><td></td><td></td><td></td></tr>
-		    			<tr><th>GHANA</th><td></td><td></td><td></td><td>37 187F</td><td>49 686F</td><td>68 437F</td><td></td><td></td></tr>
-		    			<tr><th>MAROC</th><td></td><td></td><td></td><td></td><td>6 066F</td><td>9 130F</td><td></td><td>30 577F</td></tr>
-		    			<tr><th>TUNISIE</th><td></td><td></td><td></td><td>4 687F</td><td>6 250F</td><td>9 375F</td><td></td><td>15 625F</td></tr>
-		    			<tr><th>FRANCE</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>13 119F</td></tr>
+		    			<tr><th>BURKINA FASO</th><td></td><td data-value="41900">41 900F</td><td data-value="80400">80 400F</td><td></td><td></td><td></td><td></td><td></td></tr>
+		    			<tr><th>GHANA</th><td></td><td></td><td></td><td data-value="37187">37 187F</td><td data-value="49686">49 686F</td><td data-value="68437">68 437F</td><td></td><td></td></tr>
+		    			<tr><th>MAROC</th><td></td><td></td><td></td><td></td><td data-value="6066">6 066F</td><td data-value="9130">9 130F</td><td></td><td data-value="30577">30 577F</td></tr>
+		    			<tr><th>TUNISIE</th><td></td><td></td><td></td><td data-value="4687">4 687F</td><td data-value="6250">6 250F</td><td data-value="9375">9 375F</td><td></td><td data-value="15625">15 625F</td></tr>
+		    			<tr><th>FRANCE</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td data-value="13119">13 119F</td></tr>
 		    		</tbody>
 	    		</table>
 
@@ -149,6 +155,59 @@
 	    		<li><a href="https://donilab.ml">Donilab</a> : Tidiane Ball (<a href="mailto:tidianeball@yahoo.fr">tidianeball@yahoo.fr</a>) au 66 66 88 13 / 74 10 16 22</li>
 	    	</ul>
 		</footer>
-    </div
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+    	Number.prototype.formatNumber = function(decPlaces, thouSeparator, decSeparator) {
+		    decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces;
+		    decSeparator = decSeparator == undefined ? "." : decSeparator;
+		    thouSeparator = thouSeparator == undefined ? "," : thouSeparator;
+
+		    var n = this.toFixed(decPlaces);
+		    if (decPlaces) {
+		        var i = n.substr(0, n.length - (decPlaces + 1));
+		        var j = decSeparator + n.substr(-decPlaces);
+		    } else {
+		        i = n;
+		        j = '';
+		    }
+
+		    function reverse(str) {
+		        var sr = '';
+		        for (var l = str.length - 1; l >= 0; l--) {
+		            sr += str.charAt(l);
+		        }
+		        return sr;
+		    }
+
+		    if (parseInt(i)) {
+		        i = reverse(reverse(i).replace(/(\d{3})(?=\d)/g, "$1" + thouSeparator));
+		    }
+		    return i+j;
+		};
+    	function value_converter(base_amount, currency) {
+    		if (currency == '$') {
+    			var nval = (base_amount / 500);
+    			return "$" + nval.formatNumber(2, ',', '.');
+    		}
+    		if (currency == '€') {
+    			var nval = (base_amount / 655.956);
+    			return nval.formatNumber(2, ' ', ',') + "€";
+    		}
+
+			return base_amount.formatNumber(0, ' ', ',') + "F";
+    	}
+    	function change_table_currency(currency) {
+    		$('#price_comparison td').each(function(idx, td) {
+    			var tdE = $(td);
+    			if (tdE.data('value')) {
+    				tdE.html(value_converter(tdE.data('value'), currency));
+    			}
+    		});
+    	}
+    	$('#table_eur').on('click', function (e) { change_table_currency('€'); });
+    	$('#table_usd').on('click', function (e) { change_table_currency('$'); });
+    	$('#table_xof').on('click', function (e) { change_table_currency('F'); });
+    </script>
 	</body>
 </html>
