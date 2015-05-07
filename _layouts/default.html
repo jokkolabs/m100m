@@ -44,7 +44,8 @@
 			body .menu { background-color: gold; padding: .3em; position: fixed; width: 100%; z-index: 1000; max-width: 800px; }
 			.menu a, .menu a:visited, .menu a:link, .menu a:hover, .menu a:focus, .menu a:active { color: white !important; }
 			header { margin-top: 2.5em; }
-			.about { float: right; }
+			.twall { float: right;  }
+			.about { float: right; margin-left: .3em; }
 
 			img { max-width: 100%; }
 		</style>
@@ -61,6 +62,8 @@
 			<a href="" class="btn btn-success" disabled="disabled">6</a>
 			<a href="" class="btn btn-success" disabled="disabled">7</a>
 			{% if page.slug != 'home' %}<a href="/" class="btn btn-danger about">À propos</a>{% endif %}
+			<a href="/twitter" class="btn btn-danger twall">Twitter Wall</a>
+			
     	</div>
 	    {{ content }}
 	</body>
