@@ -48,17 +48,21 @@
 			.about { float: right; margin-left: .3em; }
 
 			img { max-width: 100%; }
+
+			body.step2 img { min-height: 12em;max-height: 12em; }
+			body.step2 .date { clear: both; float: right; }
+			body.step2 .panel-default, body.step2 .row { border-color: #DDD;padding: 1em;margin: 1em; }
 		</style>
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	</head>
-    <body>
+    <body class="{{ page.slug }}">
     	<div class="menu">
-			<a href="/pub-2mega" class="btn btn-success" title="Fause Pub 2Méga">Fause Pub</a>
+    		<a href="/" class="btn btn-success" title="À propos">?</a>
+			<a href="/pub-2mega" class="btn btn-success" title="Fause Pub 2Méga">Pub</a>
 			<a href="/poster" class="btn btn-success" title="Poster «Fact Sheet»">Poster</a>
-			<a href="/mentions" class="btn btn-success">Ils en parlent</a>
-			{% if page.slug != 'home' %}<a href="/" class="btn btn-danger about">À propos</a>{% endif %}
-			<a href="/twitter" class="btn btn-danger twall">Twitter Wall</a>
+			<a href="/mentions" class="btn btn-success">Presse</a>
+			<a href="/twitter" class="btn btn-danger twall" title="Twitter Wall">Twitter</a>
     	</div>
 	    {{ content }}
 	</body>
