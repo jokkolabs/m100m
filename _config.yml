@@ -1,10 +1,14 @@
 # Site settings
-title: #Mali100Méga
+title: Mali100Méga
 email: rgaudin@gmail.com
 description: "Pour une augmentation des débits Internet au Mali"
 baseurl: ""
 url: "http://100mega.ml"
 twitter_username: zirasun
+name: Mali100Méga
+locale: fr
+author:
+  twitter: Mali100Mega
 
 # Build settings
 markdown: kramdown
