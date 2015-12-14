@@ -52,17 +52,27 @@
 			body.step2 img { min-height: 12em;max-height: 12em; }
 			body.step2 .date { clear: both; float: right; }
 			body.step2 .panel-default, body.step2 .row { border-color: #DDD;padding: 1em;margin: 1em; }
+
+			@media (min-width: 600px) {
+				.menu a span {
+					display: none;
+				}
+				.menu a:after {
+					content: attr(title);
+				}
+			}
 		</style>
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	</head>
     <body class="{{ page.slug }}">
     	<div class="menu">
-    		<a href="/" class="btn btn-success" title="À propos">?</a>
-			<a href="/pub-2mega" class="btn btn-success" title="Fause Pub 2Méga">Pub</a>
-			<a href="/poster" class="btn btn-success" title="Poster «Fact Sheet»">Poster</a>
-			<a href="/mentions" class="btn btn-success">Presse</a>
-			<a href="/twitter" class="btn btn-danger twall" title="Twitter Wall">Twitter</a>
+    		<a href="/" class="btn btn-success" title="À propos"><span>?</span></a>
+			<a href="/pub-2mega" class="btn btn-success" title="Fause Pub 2Méga"><span>PU</span></a>
+			<a href="/poster" class="btn btn-success" title="Poster"><span>PS</span></a>
+			<a href="/mentions" class="btn btn-success" title="Presse"><span>PR</span></a>
+			<a href="/facts" class="btn btn-success" title="Facts"><span>FA</span></a>
+			<a href="/twitter" class="btn btn-danger" title="Twitter Wall"><span>TW</span></a>
     	</div>
 	    {{ content }}
 	</body>
